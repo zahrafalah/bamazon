@@ -1,5 +1,8 @@
+var dotenv = require("dotenv").config();
 var inquirer = require('inquirer');
 var mysql = require('mysql');
+
+var keys = require('./keys.js');
 
 
 var connection = mysql.createConnection({
@@ -10,7 +13,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "Mehrdadjoon5477",
+  password: keys.secretKey.connection_Key,
   database: "bamazon"
 });
 
